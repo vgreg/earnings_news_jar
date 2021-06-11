@@ -52,4 +52,8 @@ The included Python files and their recommended execution order are:
 
 ## Sample stocks
 
-We also include the sample of stocks used in our analysis for the Journal of Accounting Research with their corresponding CRSP-PERMNO and TRTH identifier in a csv file.
+We include the sample of stocks used in our analysis for the Journal of Accounting Research with their corresponding CRSP-PERMNO and TRTH identifier in a csv file.
+
+## Ravenpack
+
+We provide a sample code on how to extract earnings announcement and analyst recommendation revision news from Ravenpack.
