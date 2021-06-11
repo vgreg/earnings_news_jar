@@ -17,7 +17,7 @@ The documentation includes sample code to extract the metrics used in the paper.
 ## Thomson Reuters Tick History
 
 The raw Thomson Reuters Tick History data (now Refinitv Tick History) was provided to us directly
-by the [Securities Industry Research Centre of Asia-Pacific](https://www.sirca.org.au/) (SIRCA) on hard drives. 
+by the [Securities Industry Research Centre of Asia-Pacific](https://www.sirca.org.au/) (SIRCA) on hard drives.
 The dataset used in this paper is about 12TB in size (gzip-compressed CSV files) and required processing
 on dedicated computing servers.
 There is one daily TAS (time and sales file) per listing exchange. Our code first seperates
@@ -49,3 +49,7 @@ The included Python files and their recommended execution order are:
 1. `ExtractQuotes.py`
 2. `ExtractQuotesAroundEarnings.py`
 3. `ExtractQuotesAfterEarningsResample.py`
+
+## Sample stocks
+
+We also include the sample of stocks used in our analysis for the Journal of Accounting Research with their corresponding CRSP-PERMNO and TRTH identifier in a csv file.
