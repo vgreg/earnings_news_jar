@@ -50,10 +50,16 @@ The included Python files and their recommended execution order are:
 2. `ExtractQuotesAroundEarnings.py`
 3. `ExtractQuotesAfterEarningsResample.py`
 
+## Ravenpack
+
+We provide a Python Jupyter sample code (RavenPack.ipynb) on how to extract earnings announcement timestamps and analyst recommendation revision news from Ravenpack.
+
+## IBES
+
+We provide a Python Jupyter sample code (IBES_Data_Processing_JAR.ipynb) to retrieved earnings announcement dates and analyst earnings surprises.
+
+IBES_Data_Processing_JAR.ipynb
+
 ## Sample stocks
 
 We include the sample of stocks used in our analysis for the Journal of Accounting Research with their corresponding CRSP-PERMNO and TRTH identifier in a csv file.
-
-## Ravenpack
-
-We provide a sample code on how to extract earnings announcement and analyst recommendation revision news from Ravenpack.
