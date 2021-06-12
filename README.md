@@ -7,7 +7,7 @@ The latest version of this code can be found at [https://github.com/vgreg/earnin
 
 *Note*: this document is written in Github Flavored Markdown. It can be read by any text editor, but is best viewed with a GFM viewer.
 
-For questions related to RavenPack and IBES, please contact [Charles Martineau](mailto:charles.martineau@utoronto.ca). 
+For questions related to RavenPack and IBES, please contact [Charles Martineau](mailto:charles.martineau@utoronto.ca).
 For questions related to Nasdaq ITCH or TRTH, please contact [Vincent Grégoire](mailto:vincent.3.gregoire@hec.ca).
 
 
@@ -17,7 +17,7 @@ We provide a Jupyter notebook with Python sample code (RavenPack.ipynb) on how t
 
 ## IBES
 
-We provide a Jupyter notebook with Python sample code (IBES_Data_Processing_JAR.ipynb) to retrieved earnings announcement dates and analyst earnings surprises.
+We provide a Jupyter notebook with Python sample code (IBES_Data_Processing_JAR.ipynb) to retrieved earnings announcement dates and analyst earnings surprises from IBES.
 
 IBES_Data_Processing_JAR.ipynb
 
@@ -31,6 +31,7 @@ We have released our code for processing the Nasdaq ITCH data as an open-source 
 module available on [GitHub](https://github.com/vgreg/MeatPy). The documention is available on [Read The Docs](https://meatpy.readthedocs.io/en/latest/).
 
 The documentation includes sample code to extract the metrics used in the paper.
+
 ## Thomson Reuters Tick History
 
 The raw Thomson Reuters Tick History data (now Refinitv Tick History) was provided to us directly
@@ -69,7 +70,7 @@ The included Python files and their recommended execution order are:
 
 ## NYSE Trade and Quote (TAQ)
 
-*Note*: We do not use TAQ in the paper. We provide this information to facilitate replication.
+*Note*: We do not use TAQ in the paper. We provide this information to facilitate replication for researchers that wish to use TAQ.
 
 While TRTH is more comprehensive, the NYSE Trade and Quote (TAQ) dataset is more commonly used in academic research. Because our study focuses on trades and \nbbo quotes, both products can be used interchangeably to produce our results. Indeed, TRTH sources SIP data (the consolidated feed used to reconstruct the NBBO) from the NYSE. We have manually verified a few events and confirmed that trades and quotes updates are a perfect match. One aspect on which they differ is in the ease of use for researchers. While TRTH provides the NBBO in a simple dataset, the NBBO must be constructed manually from TAQ data by properly merging the quote and nbbo tables.  
 
@@ -92,7 +93,7 @@ After-hours trades are identified under the condition `T`.
     - Add `C` (closing) to the list of quotes condition under the field name `qu_cond`.
 
     - In step 2, do not remove entries for which there are no quotes. This is important because "empty" quotes are common in the after-hours market. Thus, it is important to remove the following lines (lines 155-159) from Holden's sample code:
-    
+
             /* if both ask and bid are set to 0 or . then delete */
             if Best_Ask le 0 and Best_Bid le 0 then delete;
             if Best_Asksiz le 0 and Best_Bidsiz le 0 then delete;
@@ -108,11 +109,11 @@ After-hours trades are identified under the condition `T`.
 
             /* Delete abnormal spreads*/
             if Spread>5 then delete;
-            
-            /* Delete withdrawn Quotes. This is 
-            when an exchange temporarily has no quote, as indicated by quotes 
-            with price or depth fields containing values less than or equal to 0 
-            or equal to '.'. See discussion in Holden and Jacobsen (2014), 
+
+            /* Delete withdrawn Quotes. This is
+            when an exchange temporarily has no quote, as indicated by quotes
+            with price or depth fields containing values less than or equal to 0
+            or equal to '.'. See discussion in Holden and Jacobsen (2014),
             page 11. */
             if Ask le 0 or Ask =. then delete;
             if Asksiz le 0 or Asksiz =. then delete;
