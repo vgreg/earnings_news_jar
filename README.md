@@ -73,7 +73,7 @@ The included Python files and their recommended execution order are:
 
 While TRTH is more comprehensive, the NYSE Trade and Quote (TAQ) dataset is more commonly used in academic research. Because our study focuses on trades and \nbbo quotes, both products can be used interchangeably to produce our results. Indeed, TRTH sources SIP data (the consolidated feed used to reconstruct the NBBO) from the NYSE. We have manually verified a few events and confirmed that trades and quotes updates are a perfect match. One aspect on which they differ is in the ease of use for researchers. While TRTH provides the NBBO in a simple dataset, the NBBO must be constructed manually from TAQ data by properly merging the quote and nbbo tables.  
 
-To use TAQ in order to replicate our methodology, we recommend using the sample code from [Holden, Craig W., and Stacey Jacobsen. "Liquidity measurement problems in fast, competitive markets: Expensive and cheap solutions." *The Journal of Finance* 69, no. 4 (2014): 1747-1785](https://doi.org/10.1111/jofi.12127) available on [Professor Craig Holden's personal website](https://kelley.iu.edu/cholden/). However, because that code was designed to work for regular hours, changes must be made. Researchers must change the valid time range to include after-hours trades and quotes which are excluded by default and apply the following changes to the sample code:
+To use TAQ in order to replicate our methodology, we recommend using the sample code from [Holden, Craig W., and Stacey Jacobsen. "Liquidity measurement problems in fast, competitive markets: Expensive and cheap solutions." *The Journal of Finance* 69, no. 4 (2014): 1747-1785](https://doi.org/10.1111/jofi.12127) available on [Professor Craig Holden's personal website](https://kelley.iu.edu/cholden/) and [Professor Stacey Jacobsen's website](https://www.smu.edu/cox/Our-People-and-Community/Faculty/Stacey-Jacobsen). However, because that code was designed to work for regular hours, changes must be made. Researchers must change the valid time range to include after-hours trades and quotes which are excluded by default and apply the following changes to the sample code:
 1. Trades
 
     Exclude trades that have one of the following conditions under the field name `tr_scon`:
@@ -102,7 +102,7 @@ After-hours trades are identified under the condition `T`.
     - Skip step 3 in the sample code. We do not want to exclude wide bid-ask spreads at this stage (we do exclude them from some tests). Wide spreads is the norm in the after-hours market and so should not be automatically flagged as ``erroneous''.
 
     - In step 5, do not delete crossed markets, do not delete abnormal spreads, and do no delete withdrawn quotes. Therefore, remove the following lines (lines 250-264) in the code provided by Holden & Jacobsen (2014):
-    
+
             /* Delete if abnormal crossed markets */
             if Bid>Ask then delete;
 
