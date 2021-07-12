@@ -10,6 +10,7 @@ The latest version of this code can be found at [https://github.com/vgreg/earnin
 For questions related to RavenPack and IBES, please contact [Charles Martineau](mailto:charles.martineau@utoronto.ca).
 For questions related to Nasdaq ITCH or TRTH, please contact [Vincent Grégoire](mailto:vincent.3.gregoire@hec.ca).
 
+*Note*: We do not use TAQ in the paper. We provide below information to facilitate replication for researchers that wish to use TAQ.
 
 ## Ravenpack
 
@@ -69,8 +70,6 @@ The included Python files and their recommended execution order are:
 3. `ExtractQuotesAfterEarningsResample.py`
 
 ## NYSE Trade and Quote (TAQ)
-
-*Note*: We do not use TAQ in the paper. We provide this information to facilitate replication for researchers that wish to use TAQ.
 
 While TRTH is more comprehensive, the NYSE Trade and Quote (TAQ) dataset is more commonly used in academic research. Because our study focuses on trades and \nbbo quotes, both products can be used interchangeably to produce our results. Indeed, TRTH sources SIP data (the consolidated feed used to reconstruct the NBBO) from the NYSE. We have manually verified a few events and confirmed that trades and quotes updates are a perfect match. One aspect on which they differ is in the ease of use for researchers. While TRTH provides the NBBO in a simple dataset, the NBBO must be constructed manually from TAQ data by properly merging the quote and nbbo tables.  
 
